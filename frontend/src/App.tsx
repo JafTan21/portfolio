@@ -1,8 +1,13 @@
-import useUser from "@hooks/useUser";
+import DigiAnaClock from "./projects/digiana-clock";
 
 function App() {
-  const x = useUser();
-  return <p className="text-red-500">Hello world</p>;
+  return (
+    <>
+      <div className="mt-2">
+        <DigiAnaClock />
+      </div>
+    </>
+  );
 }
 
 export default App;

@@ -1,0 +1,74 @@
+.container {
+  --box-length: 550px;
+
+  height: var(--box-length);
+  width: var(--box-length);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-radius: 50%;
+  rotate: 270deg;
+
+  overflow: hidden;
+}
+
+.circle::after{
+  content: "";
+
+  --radius: 50px;
+
+  height: var(--radius);
+  width: var(--radius);
+  background-color: yellow;
+  position: absolute;
+  top: calc(50% - calc(var(--radius) / 2));
+  left: calc(50% - calc(var(--radius) / 2));
+  border-radius: 50%;
+}
+
+.hand {
+  --hand-height: 20px;
+  width: calc(var(--box-length) / 2);
+
+  position: absolute;
+  top: calc(50% - calc(var(--hand-height) / 2));
+  left: 50%;
+  transform-origin: left;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  color: white;
+
+  background-color: rgba(255, 255, 255, 0.399);
+  overflow: hidden;
+
+  text-wrap: nowrap
+}
+
+.hour {
+  @extend .hand;
+
+  font-size: 20px;
+}
+
+.minute {
+  @extend .hand;
+
+  font-size: 16px;
+}
+
+.second{
+  @extend .hand;
+  
+  font-size: 12px;
+} 
